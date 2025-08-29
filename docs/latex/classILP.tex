@@ -1,0 +1,78 @@
+\doxysection{ILP Class Reference}
+\hypertarget{classILP}{}\label{classILP}\index{ILP@{ILP}}
+
+
+Class related to the \doxylink{classILP}{ILP} aproach to the knapsack problem, managing input, output and the python script located on the folder ILP\+\_\+\+SOLVER.  
+
+
+
+
+{\ttfamily \#include $<$ilp\+\_\+utils.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classILP_ae6edf2fcedd3fdd5c57144f7616ae5a2}{prepare\+\_\+input}} (const \mbox{\hyperlink{structinput__data}{input\+\_\+data}} \&data)
+\begin{DoxyCompactList}\small\item\em Parses the input data given by the user to an input.\+txt file. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structoutput__data}{output\+\_\+data}} \mbox{\hyperlink{classILP_a45b844d1ef73d5c0ab8a1147610f18cc}{get\+\_\+output}} (\mbox{\hyperlink{structinput__data}{input\+\_\+data}} data)
+\begin{DoxyCompactList}\small\item\em Parses the data from an output.\+txt file and reorganizes it to place it on an output object. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classILP_a812dd3b5895bf630fe25054ac871e7ff}{run}} ()
+\begin{DoxyCompactList}\small\item\em Runs a python script that parses input.\+txt, aplies constraints to the \doxylink{classILP}{ILP} solver and returns a result to an output.\+txt file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class related to the \doxylink{classILP}{ILP} aproach to the knapsack problem, managing input, output and the python script located on the folder ILP\+\_\+\+SOLVER. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classILP_a45b844d1ef73d5c0ab8a1147610f18cc}\label{classILP_a45b844d1ef73d5c0ab8a1147610f18cc} 
+\index{ILP@{ILP}!get\_output@{get\_output}}
+\index{get\_output@{get\_output}!ILP@{ILP}}
+\doxysubsubsection{\texorpdfstring{get\_output()}{get\_output()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structoutput__data}{output\+\_\+data}} ILP\+::get\+\_\+output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structinput__data}{input\+\_\+data}}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parses the data from an output.\+txt file and reorganizes it to place it on an output object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Used to relocate data that is going to be put in the \doxylink{structoutput__data}{output\+\_\+data} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structoutput__data}{output\+\_\+data} Is the result that is parsed from the output.\+txt file 
+\end{DoxyReturn}
+\Hypertarget{classILP_ae6edf2fcedd3fdd5c57144f7616ae5a2}\label{classILP_ae6edf2fcedd3fdd5c57144f7616ae5a2} 
+\index{ILP@{ILP}!prepare\_input@{prepare\_input}}
+\index{prepare\_input@{prepare\_input}!ILP@{ILP}}
+\doxysubsubsection{\texorpdfstring{prepare\_input()}{prepare\_input()}}
+{\footnotesize\ttfamily void ILP\+::prepare\+\_\+input (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structinput__data}{input\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parses the input data given by the user to an input.\+txt file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data that is parsed and written to an input.\+txt file \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classILP_a812dd3b5895bf630fe25054ac871e7ff}\label{classILP_a812dd3b5895bf630fe25054ac871e7ff} 
+\index{ILP@{ILP}!run@{run}}
+\index{run@{run}!ILP@{ILP}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily int ILP\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Runs a python script that parses input.\+txt, aplies constraints to the \doxylink{classILP}{ILP} solver and returns a result to an output.\+txt file. 
+
+\begin{DoxyReturn}{Returns}
+int Returns 0 if it ran correctly, otherwise an error ocurred 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/vasco/\+Vasco/facul/\+DA/2a2s-\/da-\/proj-\/2/\mbox{\hyperlink{ilp__utils_8h}{ilp\+\_\+utils.\+h}}\item 
+/home/vasco/\+Vasco/facul/\+DA/2a2s-\/da-\/proj-\/2/\mbox{\hyperlink{ilp__utils_8cpp}{ilp\+\_\+utils.\+cpp}}\end{DoxyCompactItemize}

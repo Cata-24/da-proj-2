@@ -1,0 +1,128 @@
+\doxysection{Solver Class Reference}
+\hypertarget{classSolver}{}\label{classSolver}\index{Solver@{Solver}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSolver_a81ec4ff85937bb4b6beb161a661ad4bb}{run}} (\mbox{\hyperlink{structinput__data}{input\+\_\+data}} data)
+\begin{DoxyCompactList}\small\item\em Executes the selected algorithm based on the input data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structoutput__data}{output\+\_\+data}} \mbox{\hyperlink{classSolver_af263f6817387635045c88004131dfa70}{get\+Output\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the result of the executed algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSolver_a6204837f2501d78b7e3b81178b1b887b}{approximation}} (\mbox{\hyperlink{structinput__data}{input\+\_\+data}} data)
+\begin{DoxyCompactList}\small\item\em Approximation algorithm based on pallet profit-\/to-\/weight ratio to solve the 0/1 Knapsack problem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSolver_a7b8c5af7de2644b3ca9974b1ea18240b}{dynamic\+\_\+prog}} (\mbox{\hyperlink{structinput__data}{input\+\_\+data}} data)
+\begin{DoxyCompactList}\small\item\em Solves the 0/1 Knapsack problem using a dynamic programming aproach. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSolver_a73bd04e8f7088785c98e9f029bd8e152}{brute\+\_\+force}} (\mbox{\hyperlink{structinput__data}{input\+\_\+data}} data)
+\begin{DoxyCompactList}\small\item\em Solves the 0/1 Knapsack problem using brute-\/force recursion. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSolver_acfab2317fd76c458df2b7063baef9e2a}{ilp\+\_\+aproach}} (\mbox{\hyperlink{structinput__data}{input\+\_\+data}} data)
+\begin{DoxyCompactList}\small\item\em Solves the 0/1 Knapsack problem using Integer Linear Programming aproach. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSolver_a6204837f2501d78b7e3b81178b1b887b}\label{classSolver_a6204837f2501d78b7e3b81178b1b887b} 
+\index{Solver@{Solver}!approximation@{approximation}}
+\index{approximation@{approximation}!Solver@{Solver}}
+\doxysubsubsection{\texorpdfstring{approximation()}{approximation()}}
+{\footnotesize\ttfamily void Solver\+::approximation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structinput__data}{input\+\_\+data}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Approximation algorithm based on pallet profit-\/to-\/weight ratio to solve the 0/1 Knapsack problem. 
+
+The strategy is to sort pallets by profit-\/to-\/weight ratio and then add pallets to the solution while keeping the total weight within the allowed maximum.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Input data structure containing the vector of pallets and capacity (full\+\_\+weight). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSolver_a73bd04e8f7088785c98e9f029bd8e152}\label{classSolver_a73bd04e8f7088785c98e9f029bd8e152} 
+\index{Solver@{Solver}!brute\_force@{brute\_force}}
+\index{brute\_force@{brute\_force}!Solver@{Solver}}
+\doxysubsubsection{\texorpdfstring{brute\_force()}{brute\_force()}}
+{\footnotesize\ttfamily void Solver\+::brute\+\_\+force (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structinput__data}{input\+\_\+data}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Solves the 0/1 Knapsack problem using brute-\/force recursion. 
+
+This function initializes and calls the recursive backtracking algorithm that explores all possible combinations of pallets to find the subset that maximizes profit without exceeding the weight capacity.
+
+The solution is stored in the {\ttfamily result} member variable of the \doxylink{classSolver}{Solver} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Input data containing the list of pallets and knapsack capacity. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSolver_a7b8c5af7de2644b3ca9974b1ea18240b}\label{classSolver_a7b8c5af7de2644b3ca9974b1ea18240b} 
+\index{Solver@{Solver}!dynamic\_prog@{dynamic\_prog}}
+\index{dynamic\_prog@{dynamic\_prog}!Solver@{Solver}}
+\doxysubsubsection{\texorpdfstring{dynamic\_prog()}{dynamic\_prog()}}
+{\footnotesize\ttfamily void Solver\+::dynamic\+\_\+prog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structinput__data}{input\+\_\+data}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Solves the 0/1 Knapsack problem using a dynamic programming aproach. 
+
+It creates a table of size n + 1 x limit\+\_\+weight + 1 and initializes all cells to 0 Then it goes row by row retrieving the value for each cell that will be choosen in regards to the values that came before. The result profit will be in the last cell.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Has the objects weights and values, also has the limit\+\_\+weight. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSolver_af263f6817387635045c88004131dfa70}\label{classSolver_af263f6817387635045c88004131dfa70} 
+\index{Solver@{Solver}!getOutputData@{getOutputData}}
+\index{getOutputData@{getOutputData}!Solver@{Solver}}
+\doxysubsubsection{\texorpdfstring{getOutputData()}{getOutputData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structoutput__data}{output\+\_\+data}} Solver\+::get\+Output\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the result of the executed algorithm. 
+
+This function returns the output data generated by the most recently run algorithm. The output contains information such as the selected pallets and the total weight.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structoutput__data}{output\+\_\+data} Struct holding the result of the selected algorithm execution. 
+\end{DoxyReturn}
+\Hypertarget{classSolver_acfab2317fd76c458df2b7063baef9e2a}\label{classSolver_acfab2317fd76c458df2b7063baef9e2a} 
+\index{Solver@{Solver}!ilp\_aproach@{ilp\_aproach}}
+\index{ilp\_aproach@{ilp\_aproach}!Solver@{Solver}}
+\doxysubsubsection{\texorpdfstring{ilp\_aproach()}{ilp\_aproach()}}
+{\footnotesize\ttfamily void Solver\+::ilp\+\_\+aproach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structinput__data}{input\+\_\+data}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Solves the 0/1 Knapsack problem using Integer Linear Programming aproach. 
+
+It uses a python script that parses an input.\+txt, applies constraints based on the values parsed, generates the result and then it writes the result onto an output.\+txt That output is parsed into c++ again and placed in an \doxylink{structoutput__data}{output\+\_\+data} struct
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Has the objects weights and values, also has the limit\+\_\+weight. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSolver_a81ec4ff85937bb4b6beb161a661ad4bb}\label{classSolver_a81ec4ff85937bb4b6beb161a661ad4bb} 
+\index{Solver@{Solver}!run@{run}}
+\index{run@{run}!Solver@{Solver}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Solver\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structinput__data}{input\+\_\+data}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Executes the selected algorithm based on the input data. 
+
+This function determines which algorithm should be used to solve the Delivery Truck \doxylink{classPallet}{Pallet} Packing Optimization Problem. It switches on the \textquotesingle{}algorithm\textquotesingle{} field from the input data and calls the corresponding method\+: brute force, dynamic programming, approximation, or integer linear programming (\doxylink{classILP}{ILP}). If an invalid option is provided, it outputs an error message.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Struct containing input data. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/vasco/\+Vasco/facul/\+DA/2a2s-\/da-\/proj-\/2/\mbox{\hyperlink{solver_8h}{solver.\+h}}\item 
+/home/vasco/\+Vasco/facul/\+DA/2a2s-\/da-\/proj-\/2/\mbox{\hyperlink{solver_8cpp}{solver.\+cpp}}\end{DoxyCompactItemize}

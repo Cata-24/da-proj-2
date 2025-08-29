@@ -1,0 +1,59 @@
+\doxysection{/home/vasco/\+Vasco/facul/\+DA/2a2s-\/da-\/proj-\/2/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{/home/vasco/Vasco/facul/DA/2a2s-\/da-\/proj-\/2/main.cpp@{/home/vasco/Vasco/facul/DA/2a2s-\/da-\/proj-\/2/main.cpp}}
+
+
+Main entry point for the Delivery Truck \doxylink{classPallet}{Pallet} Packing Optimization application.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include "{}interface.\+h"{}}\newline
+{\ttfamily \#include "{}startup.\+h"{}}\newline
+{\ttfamily \#include "{}solver.\+h"{}}\newline
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main program loop to interact with the user and solve the packing problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main entry point for the Delivery Truck \doxylink{classPallet}{Pallet} Packing Optimization application. 
+
+This program provides a command-\/line interface that using various algorithmic approaches solves the pallet packing problem. It repeatedly gathers user input, runs the selected algorithm on the input data, measures execution time, and displays the results.
+
+The main loop allows continuous interaction until the program is terminated manually. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main program loop to interact with the user and solve the packing problem. 
+
+This function continuously\+:
+\begin{DoxyItemize}
+\item Asks the user for input information via the \doxylink{classInterface}{Interface} class.
+\item Loads and prepares input data from datasets using the startup function.
+\item Runs the selected algorithm via the \doxylink{classSolver}{Solver} class and measures its execution time.
+\item Displays the results.
+\end{DoxyItemize}
+
+The loop runs indefinitely, allowing multiple problem instances to be solved consecutively.
+
+\begin{DoxyReturn}{Returns}
+int Program exit status (always 0). 
+\end{DoxyReturn}

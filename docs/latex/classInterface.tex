@@ -1,0 +1,67 @@
+\doxysection{Interface Class Reference}
+\hypertarget{classInterface}{}\label{classInterface}\index{Interface@{Interface}}
+
+
+Class related to the terminar interactions with the user, retrives their input and, after the algorithm ran, it returns it\textquotesingle{}s corresponding output.  
+
+
+
+
+{\ttfamily \#include $<$interface.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classInterface_a42390ab640a3eca13314fabc47b1bbb0}\label{classInterface_a42390ab640a3eca13314fabc47b1bbb0} 
+void {\bfseries gather\+Info} ()
+\begin{DoxyCompactList}\small\item\em Main function that gathers the input, it calls other functions to gather specific parts of the needed data. \end{DoxyCompactList}\item 
+\Hypertarget{classInterface_a0c59eb9e90c2c54a7db533d1e1b637c7}\label{classInterface_a0c59eb9e90c2c54a7db533d1e1b637c7} 
+void {\bfseries gather\+Datasets} ()
+\begin{DoxyCompactList}\small\item\em Gathers an int the corresponds to the dataset that will be used to run the problem. \end{DoxyCompactList}\item 
+\Hypertarget{classInterface_a41c7f49e03085d0f856d42da426f8c2d}\label{classInterface_a41c7f49e03085d0f856d42da426f8c2d} 
+void {\bfseries gather\+Algorithm} ()
+\begin{DoxyCompactList}\small\item\em Gathers an int that corresponds to the algorithm that will be used, 1 -\/ Brute Force / 2 -\/ Dynamic Prog / 3 -\/ Aproximation / 4 -\/ \doxylink{classILP}{ILP}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterface_a6a6120e3d9d584cb1fc3e76c29b586de}{show\+Results}} (\mbox{\hyperlink{structoutput__data}{output\+\_\+data}} result)
+\begin{DoxyCompactList}\small\item\em Parses output data and outputs it using cout in a user friendly way. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structinput__data}{input\+\_\+data}} \mbox{\hyperlink{classInterface_a55c198e2fa189d1546b5c7074d717d72}{get\+Input\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Get the Input Data object that contains the values gathered by the \doxylink{classInterface_a42390ab640a3eca13314fabc47b1bbb0}{gather\+Info()} func. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class related to the terminar interactions with the user, retrives their input and, after the algorithm ran, it returns it\textquotesingle{}s corresponding output. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classInterface_a55c198e2fa189d1546b5c7074d717d72}\label{classInterface_a55c198e2fa189d1546b5c7074d717d72} 
+\index{Interface@{Interface}!getInputData@{getInputData}}
+\index{getInputData@{getInputData}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{getInputData()}{getInputData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structinput__data}{input\+\_\+data}} Interface\+::get\+Input\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Input Data object that contains the values gathered by the \doxylink{classInterface_a42390ab640a3eca13314fabc47b1bbb0}{gather\+Info()} func. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structinput__data}{input\+\_\+data} is the object containing the data to be used during execution 
+\end{DoxyReturn}
+\Hypertarget{classInterface_a6a6120e3d9d584cb1fc3e76c29b586de}\label{classInterface_a6a6120e3d9d584cb1fc3e76c29b586de} 
+\index{Interface@{Interface}!showResults@{showResults}}
+\index{showResults@{showResults}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{showResults()}{showResults()}}
+{\footnotesize\ttfamily void Interface\+::show\+Results (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structoutput__data}{output\+\_\+data}}}]{result }\end{DoxyParamCaption})}
+
+
+
+Parses output data and outputs it using cout in a user friendly way. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & struct that contains data to use in the output corresponding to the result given by the choosen algorithm \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/vasco/\+Vasco/facul/\+DA/2a2s-\/da-\/proj-\/2/\mbox{\hyperlink{interface_8h}{interface.\+h}}\item 
+/home/vasco/\+Vasco/facul/\+DA/2a2s-\/da-\/proj-\/2/\mbox{\hyperlink{interface_8cpp}{interface.\+cpp}}\end{DoxyCompactItemize}

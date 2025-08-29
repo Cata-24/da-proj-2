@@ -1,0 +1,81 @@
+\doxysection{/home/vasco/\+Vasco/facul/\+DA/2a2s-\/da-\/proj-\/2/startup.h}
+\hypertarget{startup_8h_source}{}\label{startup_8h_source}\mbox{\hyperlink{startup_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STARTUP\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STARTUP\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{structs_8h}{structs.h}}"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{inline}\ vector<Pallet>\ \mbox{\hyperlink{startup_8h_a97111b893233b284986047a4eb56f142}{loadPallet}}(\textcolor{keywordtype}{int}\ n\_pallet)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ vector<Pallet>\ pallets;}
+\DoxyCodeLine{00033\ \ \ \ \ stringstream\ filename;}
+\DoxyCodeLine{00034\ \ \ \ \ filename\ <<\ \textcolor{stringliteral}{"{}../datasets/Pallets\_"{}}\ <<\ std::setw(2)\ <<\ std::setfill(\textcolor{charliteral}{'0'})\ <<\ n\_pallet\ <<\ \textcolor{stringliteral}{"{}.csv"{}};}
+\DoxyCodeLine{00035\ \ \ \ \ ifstream\ file(filename.str());}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ file:\ "{}}\ <<\ filename.str()\ <<\ endl;}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{00040\ \ \ \ \ getline(file,\ line);\ \textcolor{comment}{//Skip\ header.}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Process\ each\ line\ in\ the\ CSV\ file.}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(file,\ line))\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ stringstream\ linestream(line);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ pal;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ id,\ weight,\ profit;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ and\ convert\ the\ fields\ from\ the\ CSV\ line}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ getline(linestream,\ pal,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ stoi(pal);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ getline(linestream,\ pal,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ weight\ =\ stoi(pal);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ getline(linestream,\ pal,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ profit\ =\ stoi(pal);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ Pallet\ object\ and\ set\ values}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPallet}{Pallet}}\ p;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ p.\mbox{\hyperlink{classPallet_a313e0e68659b76923cbadf04118e79e3}{setId}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ p.\mbox{\hyperlink{classPallet_acb03a0c92af19b11f304591e9270cac0}{setWeight}}(weight);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ p.\mbox{\hyperlink{classPallet_a335ad997af3243569c4c84fa9075ba59}{setProfit}}(profit);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ pallets.push\_back(p);\ \textcolor{comment}{//\ add\ pallet\ to\ vector}}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{return}\ pallets;}
+\DoxyCodeLine{00064\ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{startup_8h_ab88d2624a8f974578233e87a21283b2a}{loadTruck}}(\textcolor{keywordtype}{int}\ n\_truck)\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ capacity\ =\ 0;}
+\DoxyCodeLine{00077\ \ \ \ \ stringstream\ filename;}
+\DoxyCodeLine{00078\ \ \ \ \ filename\ <<\ \textcolor{stringliteral}{"{}../datasets/TruckAndPallets\_"{}}\ <<\ std::setw(2)\ <<\ std::setfill(\textcolor{charliteral}{'0'})\ <<\ n\_truck\ <<\ \textcolor{stringliteral}{"{}.csv"{}};}
+\DoxyCodeLine{00079\ \ \ \ \ ifstream\ file(filename.str());}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ file:\ "{}}\ <<\ filename.str()\ <<\ endl;}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{00084\ \ \ \ \ getline(file,\ line);\ \textcolor{comment}{//Skip\ header.}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ Process\ each\ line\ in\ the\ CSV\ file.}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(file,\ line))\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ stringstream\ linestream(line);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ pal;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ and\ convert\ the\ fields\ from\ the\ CSV\ line}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ getline(linestream,\ pal,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ capacity\ =\ stoi(pal);}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{return}\ capacity;}
+\DoxyCodeLine{00096\ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{startup_8h_a1561b20afbb0199390fe54e67fff8339}{startup}}(\mbox{\hyperlink{structinput__data}{input\_data}}\ \&data)\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ data.\mbox{\hyperlink{structinput__data_a5af363c02cfe20c99eac0d66abb47792}{full\_weight}}\ =\ \mbox{\hyperlink{startup_8h_ab88d2624a8f974578233e87a21283b2a}{loadTruck}}(data.\mbox{\hyperlink{structinput__data_a0d38e212fedbe2de121b5e8b5426f9c9}{dataset}});}
+\DoxyCodeLine{00110\ \ \ \ \ data.\mbox{\hyperlink{structinput__data_a99d2acf6908d45a0d842d601d423f72d}{pallets}}\ =\ \mbox{\hyperlink{startup_8h_a97111b893233b284986047a4eb56f142}{loadPallet}}(data.\mbox{\hyperlink{structinput__data_a0d38e212fedbe2de121b5e8b5426f9c9}{dataset}});}
+\DoxyCodeLine{00111\ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//STARTUP\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,84 @@
+\doxysection{/home/vasco/\+Vasco/facul/\+DA/2a2s-\/da-\/proj-\/2/solver.cpp File Reference}
+\hypertarget{solver_8cpp}{}\label{solver_8cpp}\index{/home/vasco/Vasco/facul/DA/2a2s-\/da-\/proj-\/2/solver.cpp@{/home/vasco/Vasco/facul/DA/2a2s-\/da-\/proj-\/2/solver.cpp}}
+
+
+Implements multiple algorithmic approaches aiming to solve the Delivery Truck \doxylink{classPallet}{Pallet} Packing Optimization Problem.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}solver.\+h"{}}\newline
+{\ttfamily \#include "{}algorithm"{}}\newline
+Include dependency graph for solver.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{solver_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{solver_8cpp_a2d593fbf98b34c118f308d555efc9717}{recursive\+\_\+alg}} (\mbox{\hyperlink{structinput__data}{input\+\_\+data}} data, int index, int current\+\_\+weight, int current\+\_\+prof, int \&max\+\_\+prof, vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&current\+\_\+set\+\_\+pallets, \mbox{\hyperlink{structoutput__data}{output\+\_\+data}} \&result)
+\begin{DoxyCompactList}\small\item\em Recursively explores all subsets of pallets to solve the 0/1 Knapsack problem. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \mbox{\hyperlink{solver_8cpp_ad55274bc52f16a5cad3aa0750cee0ed4}{vector\+\_\+sortedbyratio}} (const vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Sorts a vector of pallets by their profit-\/to-\/weight ratio in descending order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements multiple algorithmic approaches aiming to solve the Delivery Truck \doxylink{classPallet}{Pallet} Packing Optimization Problem. 
+
+This file defines the {\ttfamily \doxylink{classSolver}{Solver}} class methods for selecting and running different algorithms to solve the 0/1 Knapsack problem. Implemented approaches include brute-\/force, recursion, dynamic programming, approximation by profit-\/to-\/weight ratio, and an integer linear programming (\doxylink{classILP}{ILP}) method. The file also contains utility functions like a custom sorter.
+
+Algorithms are selected based on an input parameter and are used to maximize total profit while respecting the truck’s weight capacity constraint. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{solver_8cpp_a2d593fbf98b34c118f308d555efc9717}\label{solver_8cpp_a2d593fbf98b34c118f308d555efc9717} 
+\index{solver.cpp@{solver.cpp}!recursive\_alg@{recursive\_alg}}
+\index{recursive\_alg@{recursive\_alg}!solver.cpp@{solver.cpp}}
+\doxysubsubsection{\texorpdfstring{recursive\_alg()}{recursive\_alg()}}
+{\footnotesize\ttfamily void recursive\+\_\+alg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structinput__data}{input\+\_\+data}}}]{data,  }\item[{int}]{index,  }\item[{int}]{current\+\_\+weight,  }\item[{int}]{current\+\_\+prof,  }\item[{int \&}]{max\+\_\+prof,  }\item[{vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&}]{current\+\_\+set\+\_\+pallets,  }\item[{\mbox{\hyperlink{structoutput__data}{output\+\_\+data}} \&}]{result }\end{DoxyParamCaption})}
+
+
+
+Recursively explores all subsets of pallets to solve the 0/1 Knapsack problem. 
+
+This function uses backtracking to test all possible combinations of pallets. For each combination, it tracks the current weight and profit. If a new best solution is found (highest profit, or same profit with lower weight), it updates the result.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The input data with pallets and capacity. \\
+\hline
+{\em index} & Current index in the pallet list. \\
+\hline
+{\em current\+\_\+weight} & Current total weight of selected pallets. \\
+\hline
+{\em current\+\_\+prof} & Current total profit of selected pallets. \\
+\hline
+{\em max\+\_\+prof} & Reference to the maximum profit found so far. \\
+\hline
+{\em current\+\_\+set\+\_\+pallets} & Current list of pallets being considered. \\
+\hline
+{\em result} & Output object storing the best solution found. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{solver_8cpp_ad55274bc52f16a5cad3aa0750cee0ed4}\label{solver_8cpp_ad55274bc52f16a5cad3aa0750cee0ed4} 
+\index{solver.cpp@{solver.cpp}!vector\_sortedbyratio@{vector\_sortedbyratio}}
+\index{vector\_sortedbyratio@{vector\_sortedbyratio}!solver.cpp@{solver.cpp}}
+\doxysubsubsection{\texorpdfstring{vector\_sortedbyratio()}{vector\_sortedbyratio()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ vector\+\_\+sortedbyratio (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&}]{pallets }\end{DoxyParamCaption})}
+
+
+
+Sorts a vector of pallets by their profit-\/to-\/weight ratio in descending order. 
+
+This function makes a copy of the input vector and sorts it based on the value returned by \doxylink{classPallet_a365b8233a0bd300aab73f3dc2e115253}{Pallet\+::calculate\+Profit\+Weight\+Ratio()}, from highest to lowest.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallets} & Vector of Pallets to be sorted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Pallet$>$ Final vector with pallets sorted by profit-\/to-\/weight ratio. 
+\end{DoxyReturn}

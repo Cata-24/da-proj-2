@@ -1,0 +1,22 @@
+<map id="/home/vasco/Vasco/facul/DA/2a2s&#45;da&#45;proj&#45;2/structs.h" name="/home/vasco/Vasco/facul/DA/2a2s&#45;da&#45;proj&#45;2/structs.h">
+<area shape="rect" id="Node000001" title="Defines data structures for input and output used in solving the knapsack problem." alt="" coords="297,5,501,45"/>
+<area shape="rect" id="Node000002" href="$ilp__utils_8h.html" title="Defines the ILP class that manages the Integer Linear Programming approach to solve the knapsack prob..." alt="" coords="105,93,288,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="347,53,255,96,253,91,345,49"/>
+<area shape="rect" id="Node000004" href="$solver_8h.html" title="Declares the Solver class and its methods for solving the Delivery Truck Pallet Packing Optimization ..." alt="" coords="212,203,411,243"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="377,58,354,95,331,153,318,204,313,202,326,151,349,92,373,55"/>
+<area shape="rect" id="Node000007" href="$interface_8h.html" title="Defines the Interface class for terminal&#45;based user interaction." alt="" coords="363,101,582,141"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="425,54,460,99,456,102,420,58"/>
+<area shape="rect" id="Node000009" href="$startup_8h.html" title="Provides utility functions for loading and parsing input data from CSV files." alt="" coords="637,101,844,141"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="482,46,672,98,671,103,481,52"/>
+<area shape="rect" id="Node000003" href="$ilp__utils_8cpp.html" title="Implements the ILP class methods to handle input/output file operations and execution of the Python I..." alt="" coords="5,196,188,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="163,160,125,198,121,194,159,156"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="239,155,291,201,288,205,235,159"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html" title="Main entry point for the Delivery Truck Pallet Packing Optimization application." alt="" coords="394,299,602,339"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="363,247,461,296,459,301,360,252"/>
+<area shape="rect" id="Node000006" href="$solver_8cpp.html" title="Implements multiple algorithmic approaches aiming to solve the Delivery Truck Pallet Packing Optimiza..." alt="" coords="155,299,369,339"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="297,257,274,300,270,297,293,254"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="472,155,471,200,475,250,491,298,486,299,470,251,465,200,467,154"/>
+<area shape="rect" id="Node000008" href="$interface_8cpp.html" title="Implements the Interface class to handle user interactions via the terminal." alt="" coords="485,203,719,243"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="510,147,579,201,576,205,506,151"/>
+<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="750,154,752,203,746,229,733,252,713,268,682,281,603,302,602,297,680,276,710,263,729,249,741,227,747,203,745,154"/>
+</map>

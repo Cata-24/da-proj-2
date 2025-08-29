@@ -1,0 +1,65 @@
+\chapter{DA Second Group Project}
+\hypertarget{index}{}\label{index}\index{DA Second Group Project@{DA Second Group Project}}
+\label{index_md__2home_2vasco_2Vasco_2facul_2DA_22a2s-da-proj-2_2README}%
+\Hypertarget{index_md__2home_2vasco_2Vasco_2facul_2DA_22a2s-da-proj-2_2README}%
+This project is designed to solve the Delivery Truck \doxylink{classPallet}{Pallet} Packing Optimization Problem, a real-\/world version of the 0/1 Knapsack Problem. For that some algorithms were implemented (brute force, dynamic programming, approximation and ilp) to maximize profit under weight constraints and compare different efficiencies and performances. In addition, we developed graphical representations of the different times and space obtained. \href{./docs/html/index.html}{\texttt{ Doxygen index file}}\hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Tech Used}{Tech Used}}\label{index_autotoc_md1}
+
+\begin{DoxyItemize}
+\item CLion (Jet\+Brains) -\/\texorpdfstring{$>$}{>} main modeling and design
+\item Doxygen -\/\texorpdfstring{$>$}{>} Documentation generations -\/\texorpdfstring{$>$}{>} Comments organization
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Members}{Members}}\label{index_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Catarina Loureiro de Bastos (up202307631)
+\item Nuno Filipe Nunes Costa (up202305503)
+\item Vasco Miguel Fidalgo Martins Gonçalves (up202305513)
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{Performance Evaluation}{Performance Evaluation}}\label{index_autotoc_md3}
+Taking a closer look to the execution time of each algorithm (measured using the chrono lib) there can be taken some conclusions\+:
+
+
+\begin{DoxyItemize}
+\item Brute-\/\+Force algorithm has a good efficiency with small data-\/sets similar to the dynamic approach. But has the size increases so does it\textquotesingle{}s execution time, by a lot (because of the {\bfseries{O(2\texorpdfstring{$^\wedge$}{\string^}n)}} time complexity).
+\item Dynamic Programming Approach starts with a similar efficiency has brute-\/force for small datasets. But being that it\textquotesingle{}s complexity is of {\bfseries{O(n \texorpdfstring{$\ast$}{*} W)}} being that it checks every cell of a matrix n x W it has a moderate increase with the dataset size.
+\item Greedy Approach always has a good performance being that it\textquotesingle{}s time complexity bases on the sorting part of the problem (sorting by v/w), taking a time complexity of {\bfseries{O(n log(n))}}. The downside is that it\textquotesingle{}s not reliable and the solution can be suboptimal.
+\item \doxylink{classILP}{ILP} Approach has as {\bfseries{worst case O(2\texorpdfstring{$^\wedge$}{\string^}n)}} but, using branch and bound techniques this only happens when it has to search the whole tree. In the normal case, it has a moderate growth with the dataset size, and can be a reliable algorithm for large datasets, but at the same time take an extremelly long time.
+\end{DoxyItemize}
+
+ 
+
+In terms of space complexity, we can also evaluate the algorithms\+:
+
+
+\begin{DoxyItemize}
+\item Brute-\/\+Force algorithm has O(n) due to recursion depth and the subset storage.
+\item Dynamic Programming Approach has as space complexity O(n \texorpdfstring{$\ast$}{*} W) because it stores a 2D table with dimensions proportional to the number of items n and the capacity W (full\+\_\+weight).
+\item Greedy Approach has O(n) since it stores a copy of the input vector for sorting and a result vector holding selected pallets.
+\item \doxylink{classILP}{ILP} Approach uses roughly O(n \texorpdfstring{$\ast$}{*} W) space, mainly due to storing the constraint matrix based on the number of items and knapsack capacity.
+\end{DoxyItemize}
+
+Finally, in terms of accuracy, here is a clear comparison between the algorithms\+:
+
+
+\begin{DoxyItemize}
+\item Brute Force and Dynamic Programming Approach guarantee optimal solutions, so their accuracy is 100\%, because they explore all or enough possibilities to find the best answer.
+\item Greedy and \doxylink{classILP}{ILP} Approach are faster but not always optimal since it selects items based on the best profit-\/to-\/weight ratio and may miss combinations that yield a higher total profit. Its accuracy depends on the problem instance but generally provides a good approximation that can be close to optimal, though never guaranteed.
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{ILP APPROACH}{ILP APPROACH}}\label{index_autotoc_md4}
+From a certain point of view it can be taken an \doxylink{classILP}{ILP} aproach to the 0/1 Knapsack Problem.
+
+
+\begin{DoxyItemize}
+\item Objective is to {\bfseries{Maximize sum of x\mbox{[}i\mbox{]}\texorpdfstring{$\ast$}{*}v\mbox{[}i\mbox{]}}}, for every i ∈ Objects and v\mbox{[}i\mbox{]} it\textquotesingle{}s value.
+\item To track what items are included x\mbox{[}i\mbox{]} has the value {\bfseries{i if included}} and {\bfseries{0 if not included}}.
+\item The problem is that the sum of the weights can\textquotesingle{}t be \texorpdfstring{$>$}{>} than the max capacity of the knapsack (W). It is added the constraint that for every i ∈ Objects and w\mbox{[}i\mbox{]} it\textquotesingle{}s weight, the sum of {\bfseries{x\mbox{[}i\mbox{]}w\mbox{[}i\mbox{]} \texorpdfstring{$<$}{<}= W}}
+\end{DoxyItemize}
+
+This aproach is taken into account in the python program in ./\+ILP\+\_\+\+SOLVER folder that runs with the help of the ilp\+\_\+utils class.
+
+Maximize\+: ∑(v\mbox{[}i\mbox{]}x\mbox{[}i\mbox{]}) Constraint\+: ∑(w\mbox{[}i\mbox{]}x\mbox{[}i\mbox{]}) ≤ W \hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{GREEDY APROACH}{GREEDY APROACH}}\label{index_autotoc_md5}
+Greedy aproach, although having an excelent execution time it falls short of the mark in exactness.
+
+
+\begin{DoxyItemize}
+\item Dataset nº1 -\/\texorpdfstring{$>$}{>} Greedy\+: 29 / Optimal\+: 32
+\end{DoxyItemize}
+
+The greedy aproach is an aproximation algorithm, it gives a good time complexity at the cost of the change of having a suboptimal result. For large datasets and a large limit capacity (W) this error can be almost minimal so the greedy aproach can be taken into consideration. A margin of 3 when the result was 32 is more significant than a margin of 3 when the result was 698 (Dataset nº 5 custom) 

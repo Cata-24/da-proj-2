@@ -1,0 +1,23 @@
+<map id="/home/vasco/Vasco/facul/DA/2a2s&#45;da&#45;proj&#45;2/solver.h" name="/home/vasco/Vasco/facul/DA/2a2s&#45;da&#45;proj&#45;2/solver.h">
+<area shape="rect" id="Node000001" title="Declares the Solver class and its methods for solving the Delivery Truck Pallet Packing Optimization ..." alt="" coords="109,5,307,45"/>
+<area shape="rect" id="Node000002" href="$structs_8h.html" title="Defines data structures for input and output used in solving the knapsack problem." alt="" coords="91,167,170,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,47,145,155,140,153,196,45"/>
+<area shape="rect" id="Node000006" href="$ilp__utils_8h.html" title="Defines the ILP class that manages the Integer Linear Programming approach to solve the knapsack prob..." alt="" coords="243,93,328,119"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="229,44,266,82,262,85,225,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,240,64,265"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="117,194,63,234,60,229,114,190"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="183,240,246,265"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="146,190,192,229,189,233,142,194"/>
+<area shape="rect" id="Node000005" href="$pallet_8h.html" title="Declares the Pallet class used in the Delivery Truck Pallet Packing Optimization Problem." alt="" coords="89,240,159,265"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="132,193,129,227,124,226,127,192"/>
+<area shape="poly" id="edge11_Node000006_Node000002" title=" " alt="" coords="262,121,169,163,167,158,259,116"/>
+<area shape="poly" id="edge10_Node000006_Node000004" title=" " alt="" coords="274,121,254,141,236,168,225,198,219,227,214,226,220,196,231,165,250,138,270,117"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="245,167,325,192"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="288,119,288,153,283,153,283,119"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="350,167,423,192"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="303,116,360,156,357,161,300,121"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="448,167,523,192"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="318,116,440,159,439,164,317,121"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="547,167,613,192"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="329,115,534,164,533,169,328,120"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="/home/vasco/Vasco/facul/DA/2a2s&#45;da&#45;proj&#45;2/interface.h" name="/home/vasco/Vasco/facul/DA/2a2s&#45;da&#45;proj&#45;2/interface.h">
+<area shape="rect" id="Node000001" title="Defines the Interface class for terminal&#45;based user interaction." alt="" coords="135,5,354,45"/>
+<area shape="rect" id="Node000002" href="$interface_8cpp.html" title="Implements the Interface class to handle user interactions via the terminal." alt="" coords="5,93,239,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,55,151,95,148,91,205,51"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title="Main entry point for the Delivery Truck Pallet Packing Optimization application." alt="" coords="263,93,471,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="284,51,342,91,339,95,281,55"/>
+</map>

@@ -1,0 +1,45 @@
+\doxysection{/home/vasco/\+Vasco/facul/\+DA/2a2s-\/da-\/proj-\/2/structs.h File Reference}
+\hypertarget{structs_8h}{}\label{structs_8h}\index{/home/vasco/Vasco/facul/DA/2a2s-\/da-\/proj-\/2/structs.h@{/home/vasco/Vasco/facul/DA/2a2s-\/da-\/proj-\/2/structs.h}}
+
+
+Defines data structures for input and output used in solving the knapsack problem.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}pallet.\+h"{}}\newline
+Include dependency graph for structs.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{structs_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structs_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structinput__data}{input\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Parameters that will be used during the execution of the knapsack problem. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structoutput__data}{output\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Values that correspond to the solution of the problem by the given algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines data structures for input and output used in solving the knapsack problem. 
+
+This file declares two main structs\+: {\ttfamily \doxylink{structinput__data}{input\+\_\+data}} and {\ttfamily \doxylink{structoutput__data}{output\+\_\+data}}.
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{structinput__data}{input\+\_\+data}} holds the parameters required for running a selected algorithm.
+\item {\ttfamily \doxylink{structoutput__data}{output\+\_\+data}} stores the result of the algorithm.
+\end{DoxyItemize}
+
+These structures are shared across multiple algorithm implementations to facilitate handling data. 

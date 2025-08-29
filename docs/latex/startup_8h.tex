@@ -1,0 +1,103 @@
+\doxysection{/home/vasco/\+Vasco/facul/\+DA/2a2s-\/da-\/proj-\/2/startup.h File Reference}
+\hypertarget{startup_8h}{}\label{startup_8h}\index{/home/vasco/Vasco/facul/DA/2a2s-\/da-\/proj-\/2/startup.h@{/home/vasco/Vasco/facul/DA/2a2s-\/da-\/proj-\/2/startup.h}}
+
+
+Provides utility functions for loading and parsing input data from CSV files.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include "{}structs.\+h"{}}\newline
+Include dependency graph for startup.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{startup_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{startup_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \mbox{\hyperlink{startup_8h_a97111b893233b284986047a4eb56f142}{load\+Pallet}} (int n\+\_\+pallet)
+\begin{DoxyCompactList}\small\item\em Loads pallet data from a CSV file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{startup_8h_ab88d2624a8f974578233e87a21283b2a}{load\+Truck}} (int n\+\_\+truck)
+\begin{DoxyCompactList}\small\item\em Loads truck capacity from a CSV file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{startup_8h_a1561b20afbb0199390fe54e67fff8339}{startup}} (\mbox{\hyperlink{structinput__data}{input\+\_\+data}} \&data)
+\begin{DoxyCompactList}\small\item\em Initializes the \doxylink{structinput__data}{input\+\_\+data} structure by loading pallet and truck data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides utility functions for loading and parsing input data from CSV files. 
+
+This file includes functions to load pallet\textquotesingle{}s id, weight and profit and truck\textquotesingle{}s capacity from CSV datasets. It also provides the {\ttfamily startup} function to parse the {\ttfamily \doxylink{structinput__data}{input\+\_\+data}} structure used in knapsack problem solvers. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{startup_8h_a97111b893233b284986047a4eb56f142}\label{startup_8h_a97111b893233b284986047a4eb56f142} 
+\index{startup.h@{startup.h}!loadPallet@{loadPallet}}
+\index{loadPallet@{loadPallet}!startup.h@{startup.h}}
+\doxysubsubsection{\texorpdfstring{loadPallet()}{loadPallet()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ load\+Pallet (\begin{DoxyParamCaption}\item[{int}]{n\+\_\+pallet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Loads pallet data from a CSV file. 
+
+Reads a file named "{}\+Pallets\+\_\+\+XX.\+csv"{} from the {\ttfamily ../datasets/} folder and constructs a vector of \doxylink{classPallet}{Pallet} objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+\_\+pallet} & The dataset number of the pallet to load. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{classPallet}{Pallet} objects with IDs, weights, and profits. 
+\end{DoxyReturn}
+\Hypertarget{startup_8h_ab88d2624a8f974578233e87a21283b2a}\label{startup_8h_ab88d2624a8f974578233e87a21283b2a} 
+\index{startup.h@{startup.h}!loadTruck@{loadTruck}}
+\index{loadTruck@{loadTruck}!startup.h@{startup.h}}
+\doxysubsubsection{\texorpdfstring{loadTruck()}{loadTruck()}}
+{\footnotesize\ttfamily int load\+Truck (\begin{DoxyParamCaption}\item[{int}]{n\+\_\+truck }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Loads truck capacity from a CSV file. 
+
+Reads a file named "{}\+Truck\+And\+Pallets\+\_\+\+XX.\+csv"{} from the {\ttfamily ../datasets/} folder and extracts the truck\textquotesingle{}s weight capacity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+\_\+truck} & The dataset number of the Truckand\+Pallets to load. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The truck\textquotesingle{}s weight capacity as an integer. 
+\end{DoxyReturn}
+\Hypertarget{startup_8h_a1561b20afbb0199390fe54e67fff8339}\label{startup_8h_a1561b20afbb0199390fe54e67fff8339} 
+\index{startup.h@{startup.h}!startup@{startup}}
+\index{startup@{startup}!startup.h@{startup.h}}
+\doxysubsubsection{\texorpdfstring{startup()}{startup()}}
+{\footnotesize\ttfamily void startup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structinput__data}{input\+\_\+data}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Initializes the \doxylink{structinput__data}{input\+\_\+data} structure by loading pallet and truck data. 
+
+This function loads the truck\textquotesingle{}s weight capacity and the list of pallets from the CSV files corresponding to the dataset number in {\ttfamily data.\+dataset}, and stores them in the {\ttfamily \doxylink{structinput__data}{input\+\_\+data}} structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Reference to the \doxylink{structinput__data}{input\+\_\+data} struct to populate. \\
+\hline
+\end{DoxyParams}

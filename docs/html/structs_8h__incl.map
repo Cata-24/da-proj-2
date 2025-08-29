@@ -1,0 +1,9 @@
+<map id="/home/vasco/Vasco/facul/DA/2a2s&#45;da&#45;proj&#45;2/structs.h" name="/home/vasco/Vasco/facul/DA/2a2s&#45;da&#45;proj&#45;2/structs.h">
+<area shape="rect" id="Node000001" title="Defines data structures for input and output used in solving the knapsack problem." alt="" coords="18,5,222,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,64,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,48,59,86,56,82,98,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="89,93,151,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,46,123,79,117,79,117,46"/>
+<area shape="rect" id="Node000004" href="$pallet_8h.html" title="Declares the Pallet class used in the Delivery Truck Pallet Packing Optimization Problem." alt="" coords="175,93,246,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="144,44,189,82,185,86,140,48"/>
+</map>
