@@ -1,0 +1,2 @@
+# Exclude the Python extension (ILP_SOLVER) from GitHub language stats
+ILP_SOLVER/** linguist-vendored
