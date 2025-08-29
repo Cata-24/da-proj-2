@@ -1,2 +1,4 @@
-# Exclude the Python extension (ILP_SOLVER) from GitHub language stats
-ILP_SOLVER/** linguist-vendored
+# Exclude all Python files in ILP_SOLVER from GitHub language stats
+ILP_SOLVER/*.py linguist-detectable=false
+ILP_SOLVER/**/*.py linguist-detectable=false
+
